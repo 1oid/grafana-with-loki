@@ -13,6 +13,8 @@ services:
     environment:
       - LOKI_USER=admin
       - LOKI_PASS=123456
+    ports:
+      - "3200:80"
     volumes:
       - ./loki.conf:/etc/nginx/conf.d/default.conf
     networks:
@@ -28,6 +30,8 @@ services:
       - nginx
     networks:
       - dokploy-network
+    ports:
+      - "3000:3000"
 
 networks:
   dokploy-network:
