@@ -1,0 +1,22 @@
+services:
+  loki:
+    image: grafana/loki:3.4.1
+    ports:
+      - "3100:3100"
+    volumes:
+      - ./loki-config.yaml:/mnt/config/loki-config.yaml
+    command: -config.file=/mnt/config/loki-config.yaml
+    networks:
+      - loki-network
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - loki
+    networks:
+      - loki-network
+
+networks:
+  loki-network:
+    driver: bridge
