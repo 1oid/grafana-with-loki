@@ -12,7 +12,7 @@ services:
       dockerfile: Dockerfile
     environment:
       - LOKI_USER=admin
-      - LOKI_PASS=123456
+      - LOKI_PASS=sjwu@23Nni
     volumes:
       - ./loki.conf:/etc/nginx/conf.d/default.conf
     networks:
