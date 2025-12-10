@@ -20,9 +20,3 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-  #grafana:
-  #  image: grafana/grafana:latest
-  #  depends_on:
-  #    - nginx
-  #  networks:
-  #    - dokploy-network
