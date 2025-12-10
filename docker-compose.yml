@@ -15,7 +15,7 @@ services:
       - LOKI_PASS=sjwu@23Nni
     volumes:
       - ./loki.conf:/etc/nginx/conf.d/default.conf
-    links:
+    depends_on:
       - loki
     networks:
       - dokploy-network
