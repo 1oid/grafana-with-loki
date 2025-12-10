@@ -12,6 +12,7 @@ services:
       timeout: 10s
       retries: 3
   nginx:
+    container_name: loki.nginx
     build:
       context: .
       dockerfile: Dockerfile
